@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Face Generator Page</title>
+    <!-- Sets viewport to the device screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--Link an external style sheet-->
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Tiny5&display=swap" rel="stylesheet">
+
+    <style>
+        /*Variables*/
+        :root {
+            --lightPink: #fcc2d0;
+            --pink: rgba(238, 151, 200, 0.7);
+            --hotPink: #e94471;
+            --pinkSolid: #EE97C8;
+        }
+
+        /*Layout*/
+        html, body {
+            cursor: url(../images/icons/mouse_icon.png), url(../images/icons/mouse_small.png), url(../images/icons/mouse_tiny.png), auto;
+        }
+
+        a, .x {
+            cursor: url(../images/icons/click_icon.png) 15 0, url(../images/icons/click_small.png) 10 0, url(../images/icons/click_tiny.png) 5 0, pointer;
+        }
+
+        .x {
+            color: white;
+        }
+
+            .x:hover {
+                color: var(--pinkSolid);
+            }
+
+        section {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 2fr 3fr;
+            grid-template-rows: auto auto;
+            padding: 0;
+        }
+
+        body {
+            background-image: url(../images/sky_background.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: scroll;
+            background-size: cover;
+            margin: 20px 0 80px 0px;
+            padding: 0;
+            font-family: 'Anonymous Pro', sans-serif;
+            font-size: 20px;
+            min-height: 100vh;
+        }
+
+        .background {
+            display: flex;
+            flex-direction: column;
+            z-index: -5;
+        }
+
+        /*Icons*/
+        .icons {
+            text-align: center;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+            .icons img {
+                display: block;
+                width: 100%;
+            }
+
+            .icons figcaption {
+                display: block;
+                text-align: center;
+                width: 100%;
+                margin-top: 5px;
+            }
+
+        .profile:hover {
+            content: url('../images/icons/profile_picture_click.png');
+        }
+
+        /*Works Folders*/
+        .works {
+            grid-column: 2;
+            grid-row: 1;
+            background: rgba(0, 0, 0, 0.7);
+            outline: 5px var(--pinkSolid) solid;
+            width: fit-content;
+            height: fit-content;
+            margin: 22px 40px 0px 0px;
+            color: white;
+        }
+
+            .works p {
+                color: black;
+            }
+
+            .works .x:hover {
+                color: white;
+            }
+
+        .title3 {
+            display: flex;
+            color: black;
+            background: var(--pinkSolid);
+            justify-content: space-between;
+            font-size: 25px;
+            height: 35px;
+            align-items: center;
+            padding-bottom: 5px;
+        }
+
+            .title3 p {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+        .folders {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            grid-template-rows: repeat(2, 1fr);
+            padding: 10px;
+        }
+
+            .folders:first-child {
+                grid-column: 1;
+                grid-row: 1;
+            }
+
+            .folders > * {
+                margin-bottom: 10px;
+            }
+
+            .folders img {
+                width: 75%;
+                margin: 10px 20px;
+                display: flex;
+                justify-content: center;
+            }
+
+            .folders figcaption {
+                text-align: center;
+            }
+
+        .works_folders:hover {
+            content: url(../images/icons/folder_icon_click.png);
+        }
+        /*Games Folder*/
+        .games_projects {
+            grid-column: 3;
+            grid-row: 1;
+            background: var(--pink);
+            outline: 5px black solid;
+            width: fit-content;
+            height: fit-content;
+            margin: 22px 40px 0px 0px;
+        }
+
+        .title2 {
+            display: flex;
+            color: white;
+            background: black;
+            justify-content: space-between;
+            font-size: 25px;
+            height: 35px;
+            align-items: center;
+            padding-bottom: 5px;
+        }
+
+            .title2 p {
+                padding-left: 10px;
+                padding-right: 10px;
+            }
+
+        .games_projects table {
+            padding: 20px 20px 0px 20px;
+        }
+
+            .games_projects table > * {
+                text-align: center;
+                align-items: center;
+            }
+
+        .games_projects td {
+            padding-bottom: 20px;
+        }
+
+        .games_projects figcaption {
+            margin-top: 12px;
+            text-align: center;
+        }
+
+        .games_projects img {
+            width: 70%;
+            outline: 10px white solid;
+        }
+
+            .games_projects img:hover {
+                outline: 10px var(--hotPink) solid;
+            }
+        /*One Work*/
+        .description {
+            background: var(--pink);
+            outline: 5px black solid;
+            margin: 40px;
+            height: fit-content;
+            grid-column: 1 / 4;
+            grid-row: 2;
+        }
+
+        .contents {
+            display: grid;
+            grid-template-columns: repeat(1fr 1fr);
+            align-items: center;
+            margin: 0px 20px 20px 20px;
+            margin-top: 0px;
+        }
+
+            .contents a {
+                margin: 20px;
+                font-size: 30px;
+                width: fit-content;
+            }
+
+                .contents a:link, .contents a:visited {
+                    color: black;
+                }
+
+                .contents a:hover {
+                    color: white;
+                }
+
+            /*            .contents img {
+                display: block;
+                width: 100%;
+                margin: 20px;
+                margin-top: 0;
+                padding: 0;
+                grid-column: 1;
+            }*/
+
+            .contents iframe {
+                width: 400px;
+                height: 400px;
+                margin: 20px 0;
+                display: block;
+                grid-column: 1;
+            }
+
+        .text {
+            display: block;
+            grid-column: 2;
+            margin: 0px 0px 20px 40px;
+            padding: 0px 20px 0px 20px;
+        }
+
+            .text li {
+                padding: 3px;
+            }
+
+        /*Footer*/
+        footer {
+            position: fixed;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            background: black;
+            align-items: center;
+            width: 100%;
+            color: var(--pinkSolid);
+        }
+
+        .name {
+            text-decoration: none;
+            color: var(--pinkSolid);
+        }
+
+            .name:hover {
+                color: white;
+            }
+
+        footer p {
+            grid-column: 1;
+            font-size: 50px;
+            margin: 0px;
+            padding-left: 20px;
+            font-family: 'Tiny5', sans-serif;
+            text-transform: uppercase;
+        }
+
+        footer ul {
+            grid-column: 2;
+        }
+
+        footer li {
+            list-style: none;
+            text-align: right;
+            margin-right: 20px;
+            padding: 2px;
+            font-size: 20px;
+        }
+        /* Overrides desktop style when viewport is less than 600px (for smart phones) */
+        @media only screen and (max-width: 600px) {
+            section {
+                display: block;
+            }
+
+            body {
+                margin-top: 0px;
+                margin-bottom: 100px;
+                background-image: url(../images/sky_long.png);
+            }
+
+            .icons {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+
+            .works, .games_projects, .description {
+                width: 90%;
+                height: fit-content;
+                margin: 30px auto;
+                padding: 0;
+            }
+
+            .contents {
+                padding: 0px;
+                padding-bottom: 10px;
+                display: flex;
+                flex-direction: column;
+            }
+
+            .text {
+                margin: 0px;
+            }
+
+            footer p {
+                font-size: 30px;
+            }
+
+            footer li {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<!-- body -->
+<body>
+    <main>
+        <section>
+            <div class="icons">
+                <figure>
+                    <a href="../about_me_page.html"><img src="../images/icons/profile_picture.png" alt="Profile Picture Icon" class="profile"></a>
+                    <figcaption>About Me</figcaption>
+                </figure>
+                <figure>
+                    <a href="works_page.html"><img src="../images/icons/folder_icon_click.png" alt="Works Folder"></a>
+                    <figcaption>Works</figcaption>
+                </figure>
+            </div>
+            <figure class="works">
+                <div class="title3">
+                    <p>Works</p>
+                    <p class="x" onclick="this.closest('figure').style.visibility='hidden';">X</p>
+                </div>
+                <div class="folders">
+                    <div><a href="game_page.html"><img src="../images/icons/folder_icon.png" alt="Game Projects Folder" class="works_folders"></a><figcaption>Games</figcaption></div>
+                    <div><a href="digital_arts_page.html"><img src="../images/icons/folder_icon.png" alt="Digital Arts Projects Folder" class="works_folders"></a><figcaption>Digital Arts</figcaption></div>
+                    <div><a href="code_arts_page.html"><img src="../images/icons/folder_icon_click.png" alt="Code Arts Projects Folder"></a><figcaption>Code Arts</figcaption></div>
+                </div>
+            </figure>
+            <figure class="games_projects">
+                <div class="title2">
+                    <p>Digital Arts Projects</p>
+                    <p class="x" onclick="this.closest('figure').style.visibility='hidden';">X</p>
+                </div>
+                <table>
+                    <tr>
+                        <td>
+                            <a href="muu.html">
+                                <img src="projects/code_arts/Autobiographical Game - Muu.png">
+                            </a>
+                            <figcaption>Autobiographical Game: Muu</figcaption>
+                        </td>
+                        <td>
+                            <a href="data_portrait.html">
+                                <img src="projects/code_arts/Data Portrait - Video Gaming.png">
+                            </a>
+                            <figcaption>Data Portrait: Video Gaming</figcaption>
+                        </td>
+                        <td>
+                            <a href="optical_illusion.html">
+                                <img src="projects/code_arts/Optical Illusion - Windmill Barrier-Grid Animation.png">
+                            </a>
+                            <figcaption>Optical Illusion: Windmill</figcaption>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="exquisite_corpse.html">
+                                <img src="projects/code_arts/Exquisite Corpse - Bocto.png" style="width:50%">
+                            </a>
+                            <figcaption>Exquisite Corpse: Bocto</figcaption>
+                        </td>
+                        <td>
+                            <a href="birthday_cake.html">
+                                <img src="projects/code_arts/Experimental Clock - Birthday Cake.png">
+                            </a>
+                            <figcaption>Experimental Clock: Birthday Cake</figcaption>
+                        </td>
+                        <td>
+                            <a href="face_generator.html">
+                                <img src="projects/code_arts/Face Generator.png" style="outline: 10px var(--hotPink) solid">
+                            </a>
+                            <figcaption>Face Generator</figcaption>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <a href="lipstick.html">
+                                <img src="projects/code_arts/Lost & Found - Lipstick.png">
+                            </a>
+                            <figcaption>Lost & Found: Lipstick</figcaption>
+                        </td>
+                        <td>
+                            <a href="album_cover.html">
+                                <img src="projects/code_arts/Album Cover.png">
+                            </a>
+                            <figcaption>Album Cover: Twelve Carat Toothache by Post Malone</figcaption>
+                        </td>
+                    </tr>
+                </table>
+            </figure>
+            <figure class="description">
+                <div class="title2">
+                    <p>Face Generator.txt</p>
+                    <p class="x" onclick="this.closest('figure').style.visibility='hidden';">X</p>
+                </div>
+                <div class="contents">
+                    <a href="https://editor.p5js.org/liaimv/full/lI6MpDTnk" target="_blank">Face Generator (Link)</a>
+                    <<iframe src="https://editor.p5js.org/liaimv/full/lI6MpDTnk" width="400" height"400"></iframe>
+                    <div class="text">
+                        <h1>Used</h1>
+                        <ul>
+                            <li>p5.js</li>
+                        </ul>
+                        <h1>Description</h1>
+                        <p>This is a random face generator. Click on the canvas to randomly generate a new face! The placement of the cursor also affects the background color.</p>
+                    </div>
+                </div>
+            </figure>
+        </section>
+    </main>
+    <footer>
+        <p><a href="../landing_page.html" class="name">lia's computer</a></p>
+        <ul>
+            <li>20:30</li>
+            <li>2003/01/03</li>
+        </ul>
+    </footer>
+</body>
+</html>
+
+
+

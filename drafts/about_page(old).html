@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Me Page</title>
+    <!-- Sets viewport to the device screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--Link an external style sheet-->
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Tiny5&display=swap" rel="stylesheet">
+    <style>
+        /*Variables*/
+        :root {
+            --footerText: #EE97C8;
+            --background: #fcc2d0;
+            --hoverText: #EE97C8;
+            --boxColor: #EE97C8;
+        }
+
+     
+        /*Layout*/
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Anonymous Pro', sans-serif;
+        }
+
+        section {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 2fr 3fr;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        body {
+            background: var(--background);
+        }
+
+        /*Icons*/
+        .icons {
+            text-align: center;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+            .icons img {
+                display: block;
+                width: 100%
+            }
+
+            .icons figcaption {
+                display: block;
+                text-align: center;
+                width: 100%;
+                margin-top: 5px;
+            }
+
+        /*About Me Photo*/
+        .about {
+            grid-column: 2;
+            grid-row: 1;
+            text-align: center;
+            margin: 40px 0px 0 120px;
+            padding: 0px 20px 0px 0px;
+            width: 45%;
+            height: 60%;
+            outline: 5px black solid;
+            background: var(--boxColor);
+        }
+
+            .about img {
+                width: 100%;
+                display: block;
+                padding: 10px;
+                text-align: center;
+            }
+
+        .title {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            background: black;
+        }
+
+            .title figcaption, .title p {
+                width: 100%;
+                display: block;
+                grid-column: 1;
+                text-align: left;
+                margin: 0;
+                padding: 5px 10px;
+                font-weight: bold;
+                color: white;
+            }
+
+            .title p {
+                grid-column: 2;
+                text-align: right;
+                margin: 0;
+                padding: 5px 10px;
+                font-family: 'Tiny5', sans-serif;
+                font-size: 20px;
+                background: black;
+                color: black;
+            }
+            .links {
+                display: flex;
+                justify-content: space-evenly;
+            }
+        /*About Me Background*/
+        .background {
+            grid-column: 1 / 3;
+            grid-row: 2;
+            height: 45%;
+            margin: 0px 0px 0px 30px;
+            margin-top: -135px;
+            background: var(--boxColor);
+            outline: 5px black solid;
+        }
+        .background p {
+            padding: 10px;
+            margin: -3px 0px;
+            color: white;
+            background: black;
+        }
+            .background ul {
+                margin: 0;
+                padding: 10px;
+            }
+
+            .background li {
+                list-style: none;
+                margin: 3px;
+            }
+            .links {
+                text-decoration: none;
+                padding: 10px;
+            }
+
+        /*Skills*/
+        .skills {
+            margin: 120px 50px 0px 50px;
+            padding: 10px;
+            background: var(--boxColor);
+            outline: 5px black solid;
+        }
+        .skills p {
+            padding: 10px;
+            margin: -10px -10px 0px -10px;
+            color: white;
+            background: black;
+        }
+
+        /*Footer*/
+        footer {
+            position: fixed;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            background: black;
+            align-items: center;
+            width: 100%;
+            color: var(--footerText);
+        }
+
+            footer header {
+                grid-column: 1;
+                font-size: 50px;
+                margin-left: 10px;
+                font-family: 'Tiny5', sans-serif;
+                text-transform: uppercase;
+            }
+
+            footer ul {
+                grid-column: 2;
+            }
+
+            footer li {
+                list-style: none;
+                text-align: right;
+                margin-right: 10px;
+                padding: 2px;
+                font-size: 20px;
+            }
+
+        /* Overrides desktop style when viewport is less than 600px (for smart phones) */
+        @media only screen and (max-width: 600px) {
+            section {
+                display: flex;
+            }
+            .about {
+                margin-left: 0px;
+            }
+            .background {
+                margin-top: 80px;
+            }
+            .skills {
+                margin-top: 80px;
+            }
+            footer header {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<!-- body -->
+<body>
+    <main>
+        <section>
+            <div class="icons">
+                <figure>
+                    <a href="about_page.html"><img src="images/icons/profile_pic.png"></a>
+                        <figcaption>About Me</figcaption>
+</figure>
+                <figure>
+                    <a href="works/works_page.html"><img src="images/icons/pink_folder.png"></a>
+                        <figcaption>Works</figcaption>
+</figure>
+            </div>
+            <div class="about"
+                    <figure>
+                        <div class="title">
+                            <figcaption>Me.jpg</figcaption>
+                        <p>X</p>
+                        </div>
+                        <img src="images/id_photo.jpg">
+                    </figure>
+            </div>
+            <div class="background">
+                <p>Background.txt</p>
+                <ul>
+                    <li><strong>Name:</strong> Lia Im Viratelle (임리아)</li>
+                    <li><strong>Education:</strong> The New School - Parsons School of Design (Design and Technology Major: Game Design Pathway)</li>
+                    <li><strong>Nationality:</strong> South Korea, France, United States</li>
+                    <li><strong>Interests:</strong> Video games, music, art, and hip-hop dancing</li>
+                    <li>Hi! I was born in San Diego, California from a Korean mother and a French father. I lived most of my life in Seoul, South Korea and currently am in New York to attend university. I'm aiming to be a game designer as I love to play video games.</li>
+                </ul>
+                <ul class="links">
+                    <li><a href="viral695@newschool.edu">Email</a></li>
+                    <li><a href="https://editor.p5js.org/liaimv/sketches">Itch.io</a></li>
+                    <li><a href="https://editor.p5js.org/liaimv/sketches">p5.js</a></li>
+                </ul>
+            </div>
+            <div class="skills">
+                <p>Skills.txt</p>
+                <h1>Software</h1>
+                <ul>
+                    <li>Unity</li>
+                    <li>InDesign</li>
+                    <li>After Effects</li>
+                    <li>Photoshop</li>
+                    <li>Illustrator</li>
+                </ul>
+                <h1>Coding Language</h1>
+                    <ul>
+                        <li>Javascript</li>
+                        <li>C#</li>
+                        <li>HTML</li>
+                        <li>CSS</li>
+                    </ul>
+                <h1>Language</h1>
+                    <ul>
+                        <li>Korean</li>
+                        <li>English</li>
+                        <li>French</li>
+                    </ul>
+            </div>
+        </section>
+    </main>
+</body>
+<footer>
+    <header><a href="landing_page.html" style="text-decoration: none; color: var(--footerText)">lia's portfolio</a></header>
+    <ul>
+        <li>20:30</li>
+        <li>2003/01/03</li>
+    </ul>
+</footer>
+</html>
+
+
+

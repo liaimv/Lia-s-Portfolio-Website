@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>About Me Page</title>
+    <!-- Sets viewport to the device screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--Link an external style sheet-->
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Tiny5&display=swap" rel="stylesheet">
+    <style>
+        /*Variables*/
+        :root {
+            --lightPink: #fcc2d0;
+            --pink: rgba(238, 151, 200, 0.7);
+            --hotPink: #e94471;
+            --pinkSolid: #EE97C8;
+        }
+
+        /*Layout*/
+        html, body {
+            cursor: url(images/icons/mouse_icon.png), url(images/icons/mouse_small.png), url(images/icons/mouse_tiny.png), auto;
+        }
+
+        a, .x {
+            cursor: url(images/icons/click_icon.png) 15 0, url(images/icons/click_small.png) 10 0, url(images/icons/click_tiny.png) 5 0, pointer;
+        }
+
+        .x {
+            color: white;
+        }
+
+            .x:hover {
+                color: var(--pinkSolid);
+            }
+        body {
+            background-image: url(images/sky_background.png);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-attachment: scroll;
+            background-size: cover;
+            margin: 20px 0 80px 0px;
+            font-family: 'Anonymous Pro', sans-serif;
+            font-size: 20px;
+            min-height: 100vh;
+        }
+
+
+        section {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 2fr 2fr 5fr;
+            grid-template-rows: 1fr 1fr;
+        }
+
+        /*Icons*/
+        .icons {
+            text-align: center;
+            grid-column: 1;
+            grid-row: 1;
+            width: 75%;
+        }
+
+            .icons img {
+                display: block;
+                width: 100%
+            }
+
+            .icons figcaption {
+                display: block;
+                text-align: center;
+                width: 100%;
+                margin-top: 5px;
+            }
+
+        .works_folder:hover {
+            content: url('images/icons/folder_icon_click.png');
+        }
+        .profile:hover {
+            content: url('images/icons/profile_picture_click.png');
+        }
+
+        /*Footer*/
+        footer {
+            position: fixed;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            background: black;
+            align-items: center;
+            width: 100%;
+            color: var(--pinkSolid);
+        }
+
+        .name {
+            text-decoration: none;
+            color: var(--pinkSolid);
+        }
+
+            .name:hover {
+                color: white;
+            }
+
+        footer p {
+            grid-column: 1;
+            font-size: 50px;
+            margin: 0px;
+            padding-left: 20px;
+            font-family: 'Tiny5', sans-serif;
+            text-transform: uppercase;
+        }
+
+        footer ul {
+            grid-column: 2;
+        }
+
+        footer li {
+            list-style: none;
+            text-align: right;
+            margin-right: 20px;
+            padding: 2px;
+            font-size: 20px;
+        }
+
+        /* Overrides desktop style when viewport is less than 600px (for smart phones) */
+        @media only screen and (max-width: 600px) {
+            section {
+                display: block;
+            }
+
+            body {
+                margin-top: 0px;
+                margin-bottom: 100px;
+                background-image: url(images/sky_long.png);
+            }
+
+            .icons {
+                display: flex;
+                width: 100%;
+                align-items: center;
+                justify-content: center;
+            }
+
+            footer p {
+                font-size: 30px;
+            }
+
+            footer li {
+                font-size: 15px;
+            }
+        }
+    </style>
+</head>
+<!-- body -->
+<body>
+    <main>
+        <section>
+            <div class="icons">
+                <figure>
+                    <a href="about_me_page.html"><img src="images/icons/profile_picture.png" alt="Profile Picture Icon" class="profile"></a>
+                    <figcaption>About Me</figcaption>
+                </figure>
+                <figure>
+                    <a href="works/works_page.html"><img src="images/icons/folder_icon.png" alt="Works Folder" class="works_folder"></a>
+                    <figcaption>Works</figcaption>
+                </figure>
+            </div> 
+        </section>
+    </main>
+    <footer>
+        <p><a href="landing_page.html" class="name">lia's computer</a></p>
+        <ul>
+            <li>20:30</li>
+            <li>2003/01/03</li>
+        </ul>
+    </footer>
+</body>
+</html>
+
+
+

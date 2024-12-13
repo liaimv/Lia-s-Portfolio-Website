@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Works Page</title>
+    <!-- Sets viewport to the device screen size -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <!--Link an external style sheet-->
+    <link href="css/styles.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Anonymous+Pro:ital,wght@0,400;0,700;1,400;1,700&family=Tiny5&display=swap" rel="stylesheet">
+    <style>
+        /*Variables*/
+        :root {
+            --footerText: #EE97C8;
+            --background: #fcc2d0;
+            --hoverText: #EE97C8;
+            --boxColor: #EE97C8;
+        }
+
+   
+
+        /*Layout*/
+        html, body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Anonymous Pro', sans-serif;
+        }
+
+        section {
+            display: grid;
+            width: 100%;
+            grid-template-columns: 1fr 2fr 3fr;
+            grid-template-rows: 1fr 1fr;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            background: var(--background);
+        }
+
+        /*Icons*/
+        .icons {
+            text-align: center;
+            grid-column: 1;
+            grid-row: 1;
+        }
+
+            .icons img {
+                display: block;
+                width: 100%;
+            }
+
+            .icons figcaption {
+                display: block;
+                text-align: center;
+                width: 100%;
+                margin-top: 5px;
+            }
+
+        /*Works Folders*/
+        .folders {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            padding: 20px;
+            justify-items: center;
+            outline: 5px var(--footerText) solid;
+            background: black;
+            padding-bottom: 0px;
+        }
+        .games {
+            grid-column: 1;
+            grid-row: 1;
+        }
+        .digital_arts {
+            grid-column: 2;
+            grid-row: 1;
+        }
+        .code_arts {
+            grid-column: 1;
+            grid-row: 2;
+        }
+        .games, .digital_arts, .code_arts {
+            display: block;
+            padding: 0 0 30px 0;
+            text-align: center;
+            color: white;
+        }
+        .games img, .digital_arts img, .code_arts img {
+            width: 90%;
+        }
+        .title {
+            display: grid;
+            grid-template-columns: 1fr;
+            margin-right: 15.5px;
+            margin-left: -5px;
+            align-items: center;
+        }
+            .title figcaption {
+                width: 100%;
+                display: block;
+                grid-column: 1;
+                text-align: left;
+                padding: 10px 10px;
+                font-weight: bold;
+                color: black;
+                background: var(--footerText);
+            }
+        /*Footer*/
+        footer {
+            position: fixed;
+            bottom: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            background: black;
+            align-items: center;
+            width: 100%;
+            color: var(--footerText);
+        }
+
+            footer header {
+                grid-column: 1;
+                font-size: 50px;
+                margin-left: 10px;
+                font-family: 'Tiny5', sans-serif;
+                text-transform: uppercase;
+            }
+
+            footer ul {
+                grid-column: 2;
+            }
+
+            footer li {
+                list-style: none;
+                text-align: right;
+                margin-right: 10px;
+                padding: 2px;
+                font-size: 20px;
+            }
+
+        /* Overrides desktop style when viewport is less than 600px (for smart phones) */
+        @media only screen and (max-width: 600px) {
+            section {
+                display: flex;
+            }
+
+            .skills {
+                margin-top: 80px;
+            }
+
+            footer header {
+                font-size: 20px;
+            }
+        }
+    </style>
+</head>
+<!-- body -->
+<body>
+    <main>
+        <section>
+            <div class="icons">
+                <figure>
+                    <a href="../about_page.html">
+                    <img src="../images/icons/profile_pic.png"></a>
+                    <figcaption>About Me</figcaption>
+                </figure>
+                <figure>
+                    <a href="works_page.html">
+                        <img src="../images/icons/pink_folder.png"></a>
+                        <figcaption>Works</figcaption>
+                </figure>
+            </div>
+            <div class="works">
+                    <figure>
+                        <div class="title">
+                            <figcaption>Works</figcaption>
+                        </div>
+                        <div class="folders">
+                            <div class="games"><a href="games_page.html"><img src="../images/icons/pink_folder.png"></a><p>Games</p></div>
+                            <div class="digital_arts"><a href="digital_arts_page.html"><img src="../images/icons/pink_folder.png"></a><p>Digital Arts</p></div>
+                            <div class="code_arts"><a href="code_arts_page.html"><img src="../images/icons/pink_folder.png"></a><p>Code Arts</p></div>
+                        </div>
+                    </figure>
+            </div>
+        </section>
+    </main>
+</body>
+<footer>
+    <header><a href="../landing_page.html" style="text-decoration: none; color: var(--footerText)">lia's portfolio</a></header>
+    <ul>
+        <li>20:30</li>
+        <li>2003/01/03</li>
+    </ul>
+</footer>
+</html>
+
+
+
